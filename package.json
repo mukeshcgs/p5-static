@@ -1,5 +1,13 @@
 {
-  "dependencies": {
-    "live-server": "^1.2.1"
+  "name": "p5-static",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mukeshcgs/p5-static.git",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-sass": "^1.2.1"
   }
 }

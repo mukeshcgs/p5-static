@@ -1,83 +1,73 @@
 
 
 // layout
-const winW = 600
-const winH = 400
-const cellSize = 60
-const grid = {
-  rows: winH / cellSize,
-  cols: winW / cellSize
-}
-
-const cell = {
-  width: cellSize,
-  height: cellSize
-}
+const winW = window.innerWidth
+const winH = window.innerHeight
+const CIR_SIZE = 200
+const SIDES = 180
 let seed
 function setup() {
-
   createCanvas(windowWidth, windowHeight)
-  noLoop()
+  // noLoop()
   stroke(255);
   strokeWeight(1);
-  seed = random(0, 100)
   translate(windowWidth / 2, windowHeight / 2);
+  function simpleLines() {
+  }
+
 }
+  let x=0
 
 function draw() {
   background(0, 0, 0)
-  randomSeed(seed)
-
-  const STEPS = 100
-  let LINES = []
-
-
-  for (let i = STEPS; i <= windowWidth - STEPS; i += STEPS) {
-    let line = []
-    for (let j = STEPS; j <= STEPS; j += STEPS) {
-      var point = { x: j, y: i }
-      line.push(point)
-    }
-    LINES.push(line)
-  }
   strokeWeight(0.5);
   noFill();
-  beginShape();
-  for (let i = 0; i < LINES.length; i++) {
-    vertex(LINES[i][0].x, LINES[i][0].y)
-    for (let j = 0; j < LINES[i].length; j++) {
-      console.log(LINES[i][j].x);
-      console.log(LINES[i][j].y);
-      const x = LINES[i][j].x
-      const y = LINES[i][j].y
-      const thisVertex = pointOnLine(x, y, STEPS);
-      curveVertex(thisVertex.x, thisVertex.y);
-    }
+  translate(windowWidth / 2, windowHeight / 2);
+
+  //Draw circle
+  ellipse(0, 0, CIR_SIZE / 1.5, CIR_SIZE / 1.5)
+  for (let i = 0; i < 3; i++) {
+    // line(0, 0, CIR_SIZE, 0)
   }
-  endShape()
-  // function hexagon(posX, posY, cellSize) {
-  //   strokeWeight(0.5);
-  //   noFill();
-  //   beginShape();
-  //   for (let i = 0; i < grid.rows; i++) {
-  //     for (let j = 0; j < 1; j++) {
-  //       const x = i * cell.width
-  //       const y = j * cell.height
-  //       const thisVertex = pointOnLine(x, y, cellSize);
-  //       vertex(thisVertex.x, thisVertex.y);
-  //     }
-  //   }
-  //   endShape()
-  // }
-  // //Helper Point on Line
-  function pointOnLine(posX, posY, STEPS) {
-    let rand = random(1)
-    const x = posX + STEPS * rand
-    let y = posY + STEPS * rand
+  //Ray Lines
+  function simpleLines() {
+    const stepsOut = CIR_SIZE / 4
+    const numSteps = stepsOut
+    const step = 2
+    const start = CIR_SIZE / 2
+    const stop = floor(random(start, numSteps + 1))
+    let numbShapes = SIDES
+    noFill()
+    push()
+    for (let i = 0; i < numbShapes; i++) {
+      let randSpokeColor = random(0.5, 1);
+      stroke(`rgba(0,255,0,${randSpokeColor})`);
+      line(start, 0, floor(random(start, numSteps)) * step, 0)
+      rotate(TWO_PI / numbShapes)
+    }
+    pop()
+  }
+  x = x + 0.1;
+  if (x > width) {
+    x = 0;
+  }
+  line(0, 0, 0, x);
+  // simpleLines()
+
+  //Helper Point on Circle
+  function pointOnCircle(posX, posY, radius, angle) {
+    const x = posX + radius * cos(angle)
+    const y = posY + radius * sin(angle)
     return createVector(x, y)
   }
-  // //Usage
-  // hexagon(0, 0, cellSize)
-
-
+  let numbShapes = randomSelectTwo() ? CIR_SIZE : CIR_SIZE;
+  //Helper Random 1 or 2 for Spoke count
+  function randomSelectTwo() {
+    const rando = random(1)
+    if (rando > 0.5) {
+      return true
+    } else {
+      return false
+    }
+  }
 }

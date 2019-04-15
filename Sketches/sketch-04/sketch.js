@@ -3,7 +3,7 @@
 // layout
 const winW = window.innerWidth
 const winH = window.innerHeight
-const CIR_SIZE = 400
+const CIR_SIZE = 200
 const SIDES = 180
 let seed
 function setup() {
