@@ -1,56 +1,46 @@
+// layout & global
+const winW = window.innerWidth
+const winH = window.innerHeight
 
-
-// layout
-const winW = 600
-const winH = 400
-const cellSize = 60
-const grid = {
-  rows: winH / cellSize,
-  cols: winW / cellSize
+const CELL_SIZE = 50
+const GRID = {
+  rows: winH / CELL_SIZE,
+  cols: winW / CELL_SIZE
 }
-
-const cell = {
-  width: cellSize,
-  height: cellSize
-}
+let vertexArray = []
+let COLORS = []
 let seed
 function setup() {
-
   createCanvas(windowWidth, windowHeight)
-  noLoop()
+  // noLoop()
   stroke(255);
   strokeWeight(1);
-  seed = random(0, 100)
+  seed = random(0, 10)
   translate(windowWidth / 2, windowHeight / 2);
 }
 
 function draw() {
   background(0, 0, 0)
   randomSeed(seed)
-
-  function hexagon(posX, posY, cellSize) {
-    strokeWeight(0.5);
-    noFill();
-    beginShape();
-    for (let i = 0; i < grid.rows; i++) {
-      for (let j = 0; j < 1; j++) {
-        const x = i * cell.width
-        const y = j * cell.height
-        const thisVertex = pointOnLine(x, y, cellSize);
-        vertex(thisVertex.x, thisVertex.y);
+      for (let i = 0; i < GRID.cols; i++) {
+        COLORS[i] = []
+        for (let j = 0; j < GRID.rows; j++) {
+          COLORS[i][j]=random(10,150)
+        }
       }
+
+  for (let i = 0; i < GRID.cols; i++) {
+    for (let j = 0; j < GRID.rows; j++) {
+      const x = i * CELL_SIZE
+      const y = j * CELL_SIZE
+      strokeWeight(0.5);
+      stroke(COLORS[i][j])
+      // point(x, y);
+      beginShape(POINTS);
+      vertex(x, y);
+      endShape();
+      // ellipse(x, y, 3, 3);
+      // rect(x, y, 30, 30)
     }
-    endShape()
   }
-  //Helper Point on Line
-  function pointOnLine(posX, posY, cellSize) {
-    let rand = random(1)
-    const x = posX + cellSize
-    let y = posY + cellSize * rand
-    return createVector(x, y)
-  }
-  //Usage
-  hexagon(0, 0, cellSize)
-
-
 }

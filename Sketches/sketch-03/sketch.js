@@ -1,22 +1,18 @@
-
-
 // layout
 const winW = window.innerWidth
 const winH = window.innerHeight
 const CIR_SIZE = 200
 const SIDES = 180
 let seed
+let x = 0
+
 function setup() {
   createCanvas(windowWidth, windowHeight)
   // noLoop()
   stroke(255);
   strokeWeight(1);
   translate(windowWidth / 2, windowHeight / 2);
-  function simpleLines() {
-  }
-
 }
-  let x=0
 
 function draw() {
   background(0, 0, 0)
