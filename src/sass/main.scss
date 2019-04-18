@@ -1,0 +1,15 @@
+//Bootstrap
+@import "variables";
+@import "config";
+@import "base";
+@import "typo"; 
+@import "animations";  
+//Common Components
+@import "loaders";
+//Common Includs
+@import "header";
+@import "navigation";
+@import "sidebar";
+@import "footer";
+//Pages  
+@import "home"; 
