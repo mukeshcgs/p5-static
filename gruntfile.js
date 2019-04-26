@@ -15,7 +15,7 @@ module.exports = function (grunt) {
                 files: ['src/js/*.js'],
                 tasks: ['concat', 'uglify'],
                 options: {
-                    livereload: true
+                    livereload: true 
                 }
             },
             images:{
@@ -28,9 +28,8 @@ module.exports = function (grunt) {
                     'dist/js/**/*.{js,json}',
                     'dist/css/*.css',
                     'dist/img/**/*.{png,jpg,jpeg,gif,webp,svg}',
-                    'Sketches/*.html',
-                    'Sketches/*.php',
-                    'Sketches/js/**/*.{js,json}',
+                    'Sketches/**/*.html',
+                    'Sketches/**/*.{js,json}',
                     'Sketches/css/*.css',
                     'Sketches/img/**/*.{png,jpg,jpeg,gif,webp,svg}'],
                 options: {
@@ -112,11 +111,11 @@ module.exports = function (grunt) {
         browserSync: {
             dev: {
                 bsFiles: {
-                    src: ['dist/css/*.css', 'dist/**/*.js', 'browserify:dist', 'dist/*.html']
+                    src: ['Sketches/**/*.js','Sketches/**/*.html', 'dist/css/*.css', 'dist/**/*.js', 'browserify:dist', 'dist/*.html']
                 },
                 options: {
                     watchTask: true,
-                    server: 'dist/'
+                    server: './'
                 }
             }
         },

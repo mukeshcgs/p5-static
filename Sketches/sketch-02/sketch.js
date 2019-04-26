@@ -33,13 +33,14 @@ function draw() {
     for (let j = 0; j < GRID.rows; j++) {
       const x = i * CELL_SIZE
       const y = j * CELL_SIZE
-      strokeWeight(0.5);
-      stroke(COLORS[i][j])
+      // strokeWeight(0.5);
+      noStroke()
+      fill(COLORS[i][j])
       // point(x, y);
       beginShape(POINTS);
-      vertex(x, y);
+      // vertex(x, y);
       endShape();
-      // ellipse(x, y, 3, 3);
+      ellipse(x, y, 3, 3);
       // rect(x, y, 30, 30)
     }
   }
