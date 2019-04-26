@@ -20,7 +20,7 @@ function setup() {
 }
 
 function draw() {
-  background(255)
+  background(0)
   randomSeed(seed)
 
   for (let i = 0; i < windowHeight; i++) {
