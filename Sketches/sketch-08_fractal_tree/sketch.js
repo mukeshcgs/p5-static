@@ -8,6 +8,6 @@ function setup() {
 function draw() {
   background(0, 0, 0)
   //DRAW GRID
-  // grids(40);
+  grids(40);
 
 }
