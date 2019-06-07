@@ -33,29 +33,28 @@ function setup() {
   textFont(fontS);
   textSize(150);
   textAlign(CENTER, CENTER);
-  points = fontS.textToPoints('t', 350, 350);
+  points = fontS.textToPoints('t e', 350, 350);
   pop();
 
   // for (var i = 0; i < 100; i++) {
   //   points.push(vertex(random(100, 400), random(100, 400)));
   // }
-  push()
-  beginShape(POINTS);
-  let RAD = 300;
-  for (var c = 0; c < 10; c++) {
-    for (var a = 0; a < TWO_PI; a += 0.01) {
-      var posX = RAD * cos(a);
-      var posY = RAD * sin(a);
-      vertex(posX, posY);
-      let p = createVector(posX, posY);
-      points.push(p);
-    }
-    RAD = RAD - RAD * 0.05;
-    stroke(random(100, 255), 142, 124);
-
-  }
-  endShape();
-  pop()
+  // push()
+  // beginShape(POINTS);
+  // let RAD = 300;
+  // for (var c = 0; c < 10; c++) {
+  //   for (var a = 0; a < TWO_PI; a += 0.01) {
+  //     var posX = RAD * cos(a);
+  //     var posY = RAD * sin(a);
+  //     vertex(posX, posY);
+  //     let p = createVector(posX, posY);
+  //     points.push(p);
+  //   }
+  //   RAD = RAD - RAD * 0.05;
+  //   stroke(random(100, 255), 142, 124);
+  // }
+  // endShape();
+  // pop()
 
   for (var i = 0; i < points.length; i++) {
     var pt = points[i];
