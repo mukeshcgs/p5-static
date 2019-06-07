@@ -56,34 +56,34 @@ var numPoints = 30;
 var points = [numPoints]
 var shapePosArray = []
 var shapeSize = 3
+
 function setup() {
   noLoop();
   createCanvas(600, 600)
   stroke(51);
   for (let i = 0; i < numPoints; i++) {
     // Randome point on circle
-    const rotAngle = random(TWO_PI); 
+    const rotAngle = random(TWO_PI);
     // number of points on circle
     // const rotAngle = TWO_PI/numPoints; 
     const thisVertex = pointOnCircle(0, 0, 200, i * rotAngle);
 
     // points[i] = new p5.Vector(random(width),random(height));
-    
+
     // shape(0, 0, 200, i * rotAngle, 3)
-    points[i] = new p5.Vector(floor(thisVertex.x),floor(thisVertex.y));
+    points[i] = new p5.Vector(floor(thisVertex.x), floor(thisVertex.y));
     push()
-    translate(600/2, 600/2);
-    ellipse(floor(thisVertex.x),floor(thisVertex.y),10,10)
+    translate(600 / 2, 600 / 2);
+    ellipse(floor(thisVertex.x), floor(thisVertex.y), 10, 10)
     pop()
-    
+
   }
   push()
-  noLoop();
-    
+  stroke(0, 255, 0)
 
   noFill()
-  translate(600/2, 600/2);
-  shape(0, 0, 300, shapeSize);
+  translate(600 / 2, 600 / 2);
+  shape(0, 0, 200, shapeSize);
   console.log(shapePosArray);
   pop()
 }
@@ -107,7 +107,7 @@ function draw() {
   // randPointOnLine(randPosY);
   // }
   // }
-    translate(600/2, 600/2);
+  translate(600 / 2, 600 / 2);
 
   for (let i = 0; i < numPoints; i++) {
     for (let j = 0; j <= i; j++) {
