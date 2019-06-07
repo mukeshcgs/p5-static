@@ -52,26 +52,40 @@ function randPointOnLine(lineStart, lineEnd) {
   let thisVertex = pointOnCircle(randPosX, lineStart, 100, random(TWO_PI));
   line(randPosX, lineStart, thisVertex.x, thisVertex.y)
 }
-var numPoints = 50;
+var numPoints = 30;
 var points = [numPoints]
-
+var shapePosArray = []
+var shapeSize = 3
 function setup() {
   noLoop();
   createCanvas(600, 600)
   stroke(51);
   for (let i = 0; i < numPoints; i++) {
+    // Randome point on circle
     const rotAngle = random(TWO_PI); 
+    // number of points on circle
+    // const rotAngle = TWO_PI/numPoints; 
     const thisVertex = pointOnCircle(0, 0, 200, i * rotAngle);
 
-    points[i] = new p5.Vector(floor(thisVertex.x),floor(thisVertex.y));
+    // points[i] = new p5.Vector(random(width),random(height));
     
+    // shape(0, 0, 200, i * rotAngle, 3)
+    points[i] = new p5.Vector(floor(thisVertex.x),floor(thisVertex.y));
     push()
     translate(600/2, 600/2);
-
     ellipse(floor(thisVertex.x),floor(thisVertex.y),10,10)
     pop()
     
   }
+  push()
+  noLoop();
+    
+
+  noFill()
+  translate(600/2, 600/2);
+  shape(0, 0, 300, shapeSize);
+  console.log(shapePosArray);
+  pop()
 }
 
 function draw() {
@@ -81,6 +95,7 @@ function draw() {
   //Signature
   var sign = new Signature("#cccccc", borderSize, dateString, sketchName);
   sign.show();
+  // let numPoints = int(map(mouseX, 0, width, 6, 60));
 
   // stroke(255);
   // for (let i = 0; i < lineCount; i++) {
