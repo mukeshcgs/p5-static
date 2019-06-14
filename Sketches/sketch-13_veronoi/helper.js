@@ -10,7 +10,6 @@ function preload() {
     // font = loadFont('../fonts/Questrial/Questrial-Regular.TTF');
     // font = loadFont('../fonts/Vidaloka/Vidaloka-Regular.TTF');
 }
-
 // Hexagone
 function hexagon(posX, posY, radius) {
     const rotAngle = TWO_PI / 6
