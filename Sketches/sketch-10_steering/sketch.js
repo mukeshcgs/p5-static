@@ -12,16 +12,22 @@ const winH = window.innerHeight
 var font, fontS;
 var vehicles = [];
 
+// layout
+let borderColor = 255;
+let borderSize = 4;
+let dateString = "29 May 19";
+let sketchName = "Steering-01";
+
 function preload() {
-  // font = loadFont('fonts/Krutidev_040_bo ld.TTF')
-  fontS = loadFont('fonts/DV_ME_Shree0709.TTF');
-  // font = loadFont('fonts/Arvo/Arvo-Regular.TTF');
-  // font = loadFont('fonts/Arvo/Arvo-Bold.TTF');
-  // font = loadFont('fonts/Domine/Domine-Regular.TTF');
-  // font = loadFont('fonts/Domine/Domine-Bold.TTF');
-  font = loadFont('fonts/Prata/Prata-Regular.TTF');
-  // font = loadFont('fonts/Questrial/Questrial-Regular.TTF');
-  // font = loadFont('fonts/Vidaloka/Vidaloka-Regular.TTF');
+  // font = loadFont('../fonts/Krutidev_040_bo ld.TTF')
+  fontS = loadFont('../fonts/DV_ME_Shree0709.TTF');
+  // font = loadFont('../fonts/Arvo/Arvo-Regular.TTF');
+  // font = loadFont('../fonts/Arvo/Arvo-Bold.TTF');
+  // font = loadFont('../fonts/Domine/Domine-Regular.TTF');
+  // font = loadFont('../fonts/Domine/Domine-Bold.TTF');
+  font = loadFont('../fonts/Prata/Prata-Regular.TTF');
+  // font = loadFont('../fonts/Questrial/Questrial-Regular.TTF');
+  // font = loadFont('.//fonts/Vidaloka/Vidaloka-Regular.TTF');
 }
 function setup() {
   createCanvas(800, 800);

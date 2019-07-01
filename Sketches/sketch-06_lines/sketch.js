@@ -52,7 +52,7 @@ function randPointOnLine(lineStart, lineEnd) {
   let thisVertex = pointOnCircle(randPosX, lineStart, 100, random(TWO_PI));
   line(randPosX, lineStart, thisVertex.x, thisVertex.y)
 }
-var numPoints = 30;
+var numPoints = 10;
 var points = [numPoints]
 var shapePosArray = []
 var shapeSize = 3
