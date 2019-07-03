@@ -1,15 +1,15 @@
 function preload() {
-    // font = loadFont('../fonts/Krutidev_040_bo ld.TTF')
+    // font = loadFont('fonts/Krutidev_040_bo ld.TTF')
     fontS = loadFont('../fonts/DV_ME_Shree0709.TTF');
-    // font = loadFont('../fonts/Arvo/Arvo-Regular.TTF');
-    // font = loadFont('../fonts/Arvo/Arvo-Bold.TTF');
-    // font = loadFont('../fonts/Domine/Domine-Regular.TTF');
-    // font = loadFont('../fonts/Domine/Domine-Bold.TTF');
+    // font = loadFont('fonts/Arvo/Arvo-Regular.TTF');
+    // font = loadFont('fonts/Arvo/Arvo-Bold.TTF');
+    // font = loadFont('fonts/Domine/Domine-Regular.TTF');
+    // font = loadFont('fonts/Domine/Domine-Bold.TTF');
     font = loadFont('../fonts/Prata/Prata-Regular.TTF');
-    // font = loadFont('../fonts/Questrial/Questrial-Regular.TTF');
-    // font = loadFont('.//fonts/Vidaloka/Vidaloka-Regular.TTF');
+    // font = loadFont('fonts/Questrial/Questrial-Regular.TTF');
+    // font = loadFont('fonts/Vidaloka/Vidaloka-Regular.TTF');
   }
-
+  
 // Hexagone
 function hexagon(posX, posY, radius) {
     const rotAngle = TWO_PI / 6
