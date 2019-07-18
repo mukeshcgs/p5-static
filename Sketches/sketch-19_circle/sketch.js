@@ -18,8 +18,9 @@ var SIZE = 500;
 // const PALLATE = ["#30bced", "#d16014", "#e3e4db", "#23395b", "#050401"];
 // const PALLATE = ["#26547c", "#ef476f", "#ffd166", "#23af82", "#fcfcfc"];
 // const PALLATE = ["#a0006b", "#ffb533", "#f95c41", "#9ec630", "#ff959b"];
+const PALLATE = ["#28008a", "#ffffff", "#d20027"];
 //ORANGE SHADES
-const PALLATE = ["#900c3f", "#c70039", "#ffd166", "#ff5733", "#ffc300"];
+// const PALLATE = ["#900c3f", "#c70039", "#ffd166", "#ff5733", "#ffc300"];
 
 function setup() {
   createCanvas(600, 600);
@@ -27,11 +28,11 @@ function setup() {
   // stroke(155, 142, 124);
   // strokeWeight(1);
   noLoop()
-
 }
 
 function draw() {
   background(0);
+  // background(255);
   // background(255, 245, 232);
   push()
   //Grid
